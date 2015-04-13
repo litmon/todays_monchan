@@ -1,1 +1,11 @@
 | Hello Sinatra!
+
+- @result.each do |tweet|
+  .tweet
+    p = tweet.text
+    p
+      | Fav:
+      = tweet.favorite_count
+    p
+      | RT: 
+      = tweet.retweet_count
