@@ -14,6 +14,10 @@ client = Twitter::REST::Client.new do |config|
 end
 
 get '/' do
-  @result = client.search("#今日のもんちゃん -rt", lang: "ja", result_type: :recent, count: 100)
+  slim :index
+end
+
+get '/:query' do
+  @result = client.search("##{params[:query]} -rt", lang: "ja", result_type: :recent, count: 100)
   slim :index
 end
