@@ -57,7 +57,11 @@ PLATFORMS
 
 DEPENDENCIES
   dotenv
+  json
   sinatra
   sinatra-contrib
   slim
   twitter
+
+BUNDLED WITH
+   1.10.4

@@ -4,6 +4,7 @@ require 'slim'
 require 'twitter'
 require 'dotenv'
 require 'json'
+
 Dotenv.load
 
 set :slim, format: :html
@@ -14,10 +15,12 @@ client = Twitter::REST::Client.new do |config|
 end
 
 get '/' do
-  @result = client.search("#今日のもんちゃん -rt", lang: "ja", result_type: :recent, count: 100)
+  @result = client.search(
+    "今日のもんちゃん -rt", 
+    lang: "ja",
+    result_type: :recent
+  )
+
   slim :index
 end
 
-get '/:query' do
-  slim :index
-end
